@@ -1,9 +1,9 @@
 @font-face {
     font-family: 'Wano Quin';
-    src: url('https://vicinaldo83.github.io/kinga/src/fonts/Wano_quin/wano-quin-wano-quin-regular-400.ttf') format('truetype'),
-        url('https://vicinaldo83.github.io/kinga/src/fonts/Wano_quin/wano-quin-wano-quin-regular-300.otf') format('opentype'),
-        url('https://vicinaldo83.github.io/kinga/src/fonts/Wano_quin/wano-quin-wano-quin-regular-300-webfont.woff') format('woff'),
-        url('https://vicinaldo83.github.io/kinga/src/fonts/Wano_quin/wano-quin-wano-quin-regular-300-webfont.woff2') format('woff2');
+    src: url('src/fonts/Wano_quin/wano-quin-wano-quin-regular-400.ttf') format('truetype'),
+        url('src/fonts/Wano_quin/wano-quin-wano-quin-regular-300.otf') format('opentype'),
+        url('src/fonts/Wano_quin/wano-quin-wano-quin-regular-300-webfont.woff') format('woff'),
+        url('src/fonts/Wano_quin/wano-quin-wano-quin-regular-300-webfont.woff2') format('woff2');
 }
 
 .btn-header {

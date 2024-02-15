@@ -21,7 +21,7 @@ body {
     padding: 0;
 
     background-color: var(--main-bg);
-    background-image: url("https://vicinaldo83.github.io/kinga/src/png/forms_nonbg.png");
+    background-image: url("src/png/forms_nonbg.png");
 
     height: 200vh;
     width: 100vw;
@@ -377,7 +377,7 @@ res {
     display: grid;
     position: relative;
 
-    --bg-img: url(https://vicinaldo83.github.io/kinga/src/chars/splashart-char1.png);
+    --bg-img: url(src/chars/splashart-char1.png);
 
     grid-template-columns: 30% 5% 20%;
     grid-template-rows: auto;
