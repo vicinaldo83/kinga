@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'Wano Quin';
+    src: url('/src/fonts/Wano_quin/wano-quin-wano-quin-regular-400.ttf') format('truetype'),
+        url('/src/fonts/Wano_quin/wano-quin-wano-quin-regular-300.otf') format('opentype'),
+        url('/src/fonts/Wano_quin/wano-quin-wano-quin-regular-300-webfont.woff') format('woff'),
+        url('/src/fonts/Wano_quin/wano-quin-wano-quin-regular-300-webfont.woff2') format('woff2');
+}
+
+.btn-header {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18pt;
+}
+
+.btn-demo {
+    font-family: 'Roboto', sans-serif;
+    font-size: 46pt;
+}
+
+.box {
+    font-family: 'Roboto', sans-serif;
+}
+
+.title-box {
+    font-family: 'Wano Quin';
+}
+
+.t-1 { 
+    font-size: 22vw;
+    font-weight: 400;
+}
+
+.t-2 {
+    font-size: 22vw;
+    font-weight: 300;
+}
+
+.skill-infos {
+    font-size: 20pt;
+    text-align: justify;
+}
+
+.skills h1 {
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+}
+
+.extra-info {
+    font-size: 20pt;
+    text-align: justify;
+}
+
+.character-roll h1 {
+    font-size: 30pt;
+
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+}
+
