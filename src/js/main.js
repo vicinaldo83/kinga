@@ -77,7 +77,7 @@ function char_scroll(element) {
             })
             document.querySelector(".history-box").style.setProperty(
                 "--bg-img",
-                "url(/src/chars/splashart-char"+ element.dataset.num +".png)")
+                "url(.src/chars/splashart-char"+ element.dataset.num +".png)")
         }
         else {
             console.error("Div not found (Char scroll function)");
