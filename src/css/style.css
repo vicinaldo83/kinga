@@ -14,8 +14,6 @@
     --text-dmg: #ff03bf;
     --text-qnt: #6ea0ff;
     --text-res: #ca3fd9;
-
-    --root-path: "/kinga/";
 }
 
 body {
@@ -23,7 +21,7 @@ body {
     padding: 0;
 
     background-color: var(--main-bg);
-    background-image: var(--root-path) url("src/png/forms_nonbg.png");
+    background-image: url("/kinga/src/png/forms_nonbg.png");
 
     height: 200vh;
     width: 100vw;
