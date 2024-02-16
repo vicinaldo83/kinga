@@ -14,6 +14,8 @@
     --text-dmg: #ff03bf;
     --text-qnt: #6ea0ff;
     --text-res: #ca3fd9;
+
+    --root-path: "/kinga/";
 }
 
 body {
@@ -21,7 +23,7 @@ body {
     padding: 0;
 
     background-color: var(--main-bg);
-    background-image: url("src/png/forms_nonbg.png");
+    background-image: var(--root-path) url("src/png/forms_nonbg.png");
 
     height: 200vh;
     width: 100vw;
@@ -381,7 +383,7 @@ res {
     display: grid;
     position: relative;
 
-    --bg-img: url(src/chars/splashart-char1.png);
+    --bg-img: url("/kinga/src/chars/splashart-char1.png");
 
     grid-template-columns: 30% 5% 20%;
     grid-template-rows: auto;
