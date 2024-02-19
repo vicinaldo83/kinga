@@ -12,7 +12,7 @@
     --box-text: #000;
 
     --text-dmg: #ff03bf;
-    --text-qnt: #6ea0ff;
+    --text-qnt: #00e9ff;
     --text-res: #ca3fd9;
 }
 
@@ -713,7 +713,7 @@ res {
         width: fit-content;
         
         margin: 2rem auto;
-        padding: 0.5rem 3rem;
+        padding: 1rem 3rem;
 
         border-radius: calc(3.6vw * 3);
         z-index: 10;
@@ -735,14 +735,14 @@ res {
     .skill-types a {
         background-color: transparent;
         border-bottom: none;
-        border-right: transparent solid 4px;
+        border-right: transparent solid 2px;
 
         margin: 0 0px 0px 0px;
     }
 
     .skill-types a:hover {
         transition: 0.2s;
-        border-right: #aaa solid 4px;
+        border-right: #aaa solid 2px;
         border-bottom: none;
     }
 

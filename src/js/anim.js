@@ -70,6 +70,7 @@ function kinga_anim() {
         wInfo.base_x = wolf_initial_x + (e.clientX - (wInfo.vw / 2)) * 0.05
         wInfo.base_y = wolf_initial_y + (e.clientY - (wInfo.vh / 2)) * 0.15
 
+        gsap.to(wInfo.img, {duration: 1, rotationZ: (e.clientX - wInfo.x / 2) * 0.01})
     };
 
     function start() {

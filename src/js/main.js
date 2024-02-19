@@ -122,8 +122,9 @@ function extra_tile() {
                 sec.firstChild
             );
         }
-        else {-info
-            let sec = document.querySelector(".character-roll");
+        else {
+            let sec = document.querySelector(".extra-info");
+            // let sec = document.querySelector(".character-roll");
             sec.insertBefore(
                 createElm(),
                 sec.firstChild
