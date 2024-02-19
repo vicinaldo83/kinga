@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <svg version="1.1" id="Camada_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px" y="0px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+        <style type="text/css">
+            .st0 {
+                fill: #00E9FF;
+            }
+        </style>
+        <rect class="st0" width="50" height="50" />
+    </svg>
+</body>
+<style>
+    svg {
+        width: 300px;
+        height: 300px;
+    }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+    let vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0),
+        vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+
+    gsap.fromTo("svg", {x:200, y:vh}, {y:100, duration:3,})
+</script>
+</html>

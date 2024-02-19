@@ -1,65 +1,45 @@
-const wolf_pos = 20;
-const sticker_pos = -8;
-const wolf_initial_x = -16
-const wolf_initial_y = 10
-
-const cur_wolf_pos = {
-    base_x: wolf_initial_x,
-    base_y: wolf_initial_y,
-    x: wolf_initial_x,
-    y: wolf_initial_y,
-    img: document.querySelector(".img-floating"),
-    deg: 0,
-    sin: 1,
-}
-
-function move_wolf() {
-    let text = document.querySelector(".t-2");
-    text.style.transform = "translateX(" + wolf_pos + "rem)";
-}
-
-function kinga_anim() {
-    cur_wolf_pos.img
-    cur_wolf_pos.deg = (cur_wolf_pos.deg == 360)? 0 : cur_wolf_pos.deg + 1;
-
-    cur_wolf_pos.x = cur_wolf_pos.base_x + (Math.sin(cur_wolf_pos.deg * Math.PI / 180));
-    cur_wolf_pos.y = cur_wolf_pos.base_y + Math.cos(cur_wolf_pos.deg * Math.PI / 180) * 0.4;
-
-    cur_wolf_pos.img.style.transform = "translateX("+ cur_wolf_pos.x + "vw) translateY(" + cur_wolf_pos.y +"vh)";
-}
-
-function kinga_move(e) {
-    let vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0),
-        vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
-
-    cur_wolf_pos.base_x = wolf_initial_x + (e.clientX - (vw/2)) * 0.001
-    cur_wolf_pos.base_y = wolf_initial_y + (e.clientY - (vh/2)) * 0.005
-
-    // cur_wolf_pos.img.style.transform = "translateX("+ x + "vw) translateY(" + y +"vh)";
-}
-
 function skill_scroll(element) {
-    if(element.classList.contains("active")) {
+    if (element.classList.contains("active")) {
         return;
     }
     else {
         document.querySelector(".skill-box a.active").classList.remove("active");
         document.querySelector(".skill-box div.active").classList.remove("active");
-        
+
         element.classList.add("active");
 
         let div = document.querySelector("#skill-" + element.dataset.num);
-        if(div) {
+        if (div) {
             div.classList.add("active");
         }
         else {
             console.error("Div not found (Skill scroll function)");
         }
     }
+
+    
 }
 
+function skill_scroll_mobile(event) {
+    let box = event.srcElement;
+    let active = undefined;
+    if(box.scrollLeft == 0) {
+        active = 0
+    }
+    else {
+        active = (box.scrollWidth / box.scrollLeft <= 2)? 2 : 1;
+    }
+
+    let child = box.parentElement.querySelector(".paragraph-slider").children;
+    for(let i = 0; i < child.length; i++) {
+        if(i == active) child[i].classList.add("active");
+        else  child[i].classList.remove("active"); 
+    }
+}
+document.querySelector(".paragraph-box").addEventListener("scrollend", skill_scroll_mobile);
+
 function char_scroll(element) {
-    if(element.classList.contains("active")) {
+    if (element.classList.contains("active")) {
         return;
     }
     else {
@@ -68,16 +48,20 @@ function char_scroll(element) {
         document.querySelector(".extra-info div.active").classList.remove("active");
         document.querySelector(".extra-info img.active").classList.remove("active");
         
+        document.querySelectorAll(".stickers img.active").forEach((e) => {
+            e.classList.remove("active");
+        });
+
         element.classList.add("active");
 
         let ele = document.querySelectorAll("#char-" + element.dataset.num);
-        if(ele) {
+        if (ele) {
             ele.forEach((e) => {
-                e.classList.add("active");                
+                e.classList.add("active");
             })
             document.querySelector(".history-box").style.setProperty(
                 "--bg-img",
-                "url(/kinga/src/chars/splashart-char"+ element.dataset.num +".png)")
+                "url(/kinga/src/chars/splashart-char" + element.dataset.num + ".png)")
         }
         else {
             console.error("Div not found (Char scroll function)");
@@ -85,25 +69,69 @@ function char_scroll(element) {
     }
 }
 
-function setup() {
-    addEventListener("DOMContentLoaded", move_wolf);
-    addEventListener("DOMContentLoaded", () => {
-        cur_wolf_pos.img = document.querySelector(".img-floating")
-        cur_wolf_pos.img.style.transform = "translateX("+ cur_wolf_pos.x + "vw) translateY(" + cur_wolf_pos.y +"vh)";
-    })
+function demo_button () {
+    function createButton() {
+        let btn = document.createElement("button");
+        btn.classList.add("btn-demo");
+        btn.innerText = "Demo Test";
 
-    
-    addEventListener("mousemove", kinga_move);
+        return btn;
+    }
+
+    function set_btn() {
+        let initial_vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0),
+            old_btn = document.querySelector(".btn-demo");
+        
+        if(old_btn) old_btn.parentElement.removeChild(old_btn);
+        if(initial_vw <= 800) {
+            
+            let sec = document.querySelector(".sec-1");
+            sec.insertBefore(
+                createButton(),
+                sec.firstChild
+            );
+        }
+        else {
+            document.querySelector(".div-demo").appendChild(createButton());
+        }
+    }
+
+    set_btn()
+    addEventListener("resize", set_btn);
 }
+demo_button();
 
+function extra_tile() {
+    function createElm() {
+        let h1 = document.createElement("h1");
+        h1.className = "extra_title";
+        h1.innerText = "Stellaron Hunters";
 
-function loop() {
-    setInterval(kinga_anim, 10);
+        return h1;
+    }
+
+    function set_elm() {
+        let initial_vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0),
+            old_btn = document.querySelector(".extra_title");
+        
+        if(old_btn) old_btn.parentElement.removeChild(old_btn);
+        if(initial_vw <= 800) {
+            let sec = document.querySelector(".extra-info");
+            sec.insertBefore(
+                createElm(),
+                sec.firstChild
+            );
+        }
+        else {-info
+            let sec = document.querySelector(".character-roll");
+            sec.insertBefore(
+                createElm(),
+                sec.firstChild
+            );
+        }
+    }
+
+    set_elm()
+    addEventListener("resize", set_elm);
 }
-
-function main() {
-    setup();
-    loop();
-}
-
-main();
+extra_tile();

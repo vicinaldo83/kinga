@@ -24,7 +24,7 @@
     font-family: 'Wano Quin';
 }
 
-.t-1 { 
+.t-1 {
     font-size: 22vw;
     font-weight: 400;
 }
@@ -52,7 +52,7 @@
     text-align: justify;
 }
 
-.character-roll h1 {
+.character-roll h1, .extra_title {
     font-size: 4.2vh;
 
     font-style: italic;
@@ -62,10 +62,22 @@
 
 @media only screen and (max-width: 600px) {
     .skills h1 {
-        font-size: calc(4.2vh * 0.8);
+        font-size: calc(4.2vh * 0.6);
     }
 
     .skill-infos {
-        font-size: calc(2.8vh * 0.8);
+        font-size: calc(2.8vh * 0.6);
+    }
+
+    .btn-demo {
+        font-size: calc(6.4vh * 0.6);
+    }
+
+    .character-roll h1, .extra_title {
+        font-size: calc(4.2vh * 0.6);
+    }
+
+    .extra-info {
+        font-size: calc(2.8vh * 0.6);
     }
 }

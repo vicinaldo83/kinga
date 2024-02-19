@@ -8,20 +8,24 @@
     <title>Silver Wolf</title>
     <link rel="icon" href="src/png/icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <link rel="stylesheet" href="src/css/style.css">
     <link rel="stylesheet" href="src/css/fonts.css">
-    <script src="src/js/main.js"></script>
+
 </head>
 
 <body>
     <div class="headers">
         <div class="side-headers">
-            <img src="src/svg/icon_search.svg" alt="Search">
+            <span class="material-symbols-outlined">
+                menu
+            </span>
         </div>
         <div class="mid-headers">
             <button class="btn-header">Overview</button>
@@ -53,27 +57,36 @@
                 <div class="skill-infos">
                     <div id="skill-1" class="skills" data-num="1">
                         <h1>System Warning</h1>
-                        <p>
-                            Deals <dmg>Quantum DMG</dmg> equal to <qnt>50%-110%</qnt> of Silver Wolf's ATK to a
-                            single enemy.
-                        </p>
+                        <div class="paragraph-wrapper">
+                            <p>
+                                Deals <dmg>Quantum DMG</dmg> equal to <qnt>50%-110%</qnt> of Silver Wolf's ATK to a
+                                single enemy.
+                            </p>
+                        </div>
                     </div>
                     <div id="skill-2" class="skills" data-num="2">
                         <h1>Allow Changes?</h1>
                         <div class="paragraph-wrapper">
                             <div class="paragraph-box">
                                 <p>
-                                    There is a <qnt>75%-87%</qnt> base chance to add <dmg>1 Weakness</dmg> of an on-field
+                                    There is a <qnt>75%-87%</qnt> base chance to add <dmg>1 Weakness</dmg> of an
+                                    on-field
                                     ally's Type to the target enemy. This also reduces the enemy's <res>DMG RES</res> to
-                                    that Weakness Type by <qnt>20%</qnt> for <qnt>2 turn(s)</qnt>. If the enemy already has
+                                    that Weakness Type by <qnt>20%</qnt> for <qnt>2 turn(s)</qnt>. If the enemy already
+                                    has
                                     that Type Weakness, the effect of <res>DMG RES</res> reduction to that Weakness Type
                                     will not be triggered.
                                 </p>
                                 <p>
-                                    Each enemy can only have <dmg>1 Weakness</dmg> implanted by Silver Wolf. When Silver Wolf implants another Weakness to the target, only the most recent implanted Weakness will be kept. In addition, there is a <qnt>100%</qnt> base chance to reduce the <res>All-Type RES</res> of the enemy further by <qnt>7.5%-10.5%</qnt> for <qnt>2 turn(s)</qnt>.
+                                    Each enemy can only have <dmg>1 Weakness</dmg> implanted by Silver Wolf. When Silver
+                                    Wolf implants another Weakness to the target, only the most recent implanted
+                                    Weakness will be kept. In addition, there is a <qnt>100%</qnt> base chance to reduce
+                                    the <res>All-Type RES</res> of the enemy further by <qnt>7.5%-10.5%</qnt> for <qnt>2
+                                        turn(s)</qnt>.
                                 </p>
                                 <p>
-                                    Deals <dmg>Quantum DMG</dmg> equal to <qnt>98%-215.6%</qnt> of Silver Wolf's ATK to this enemy.
+                                    Deals <dmg>Quantum DMG</dmg> equal to <qnt>98%-215.6%</qnt> of Silver Wolf's ATK to
+                                    this enemy.
                                 </p>
                             </div>
                             <div class="paragraph-slider">
@@ -85,17 +98,25 @@
                     </div>
                     <div id="skill-3" class="skills" data-num="3">
                         <h1>Awaiting System Response...</h1>
-                        <p>
-                            Silver Wolf can create three types of Bugs: reduce <res>ATK by</res>    <qnt>5%-11%</qnt>, reduce <res>DEF</res> by <qnt>4%-8.8%</qnt>, and reduce <res>SPD</res> by <qnt>3%-6.6%</qnt>. Every time Silver Wolf attacks, she has a <qnt>60%-74.4%</qnt> base chance to implant a random <res>Bug</res> that lasts for <qnt>3 turn(s)</qnt> in the enemy target.
-                        </p>
+                        <div class="paragraph-wrapper">
+                            <p>
+                                Silver Wolf can create three types of Bugs: reduce <res>ATK by</res>
+                                <qnt>5%-11%</qnt>, reduce <res>DEF</res> by <qnt>4%-8.8%</qnt>, and reduce <res>SPD</res> by
+                                <qnt>3%-6.6%</qnt>. Every time Silver Wolf attacks, she has a <qnt>60%-74.4%</qnt> base
+                                chance to implant a random <res>Bug</res> that lasts for <qnt>3 turn(s)</qnt> in the enemy
+                                target.
+                            </p>
+                        </div>
                     </div>
                     <div id="skill-4" class="skills active" data-num="4">
                         <h1>Force Quit Program</h1>
-                        <p>
-                            There's a <qnt>85%-103%></qnt> base chance to decrease the target enemy's DEF by <qnt>
-                                36%-46.8%</qnt> for 3 turn(s). And at the same time, deals <dmg>Quantum DMG</dmg>
-                            equal to <qnt>228%-410.4%</qnt> of Silver Wolf's ATK to the target enemy.
-                        </p>
+                        <div class="paragraph-wrapper">
+                            <p>
+                                There's a <qnt>85%-103%></qnt> base chance to decrease the target enemy's DEF by <qnt>
+                                    36%-46.8%</qnt> for 3 turn(s). And at the same time, deals <dmg>Quantum DMG</dmg>
+                                equal to <qnt>228%-410.4%</qnt> of Silver Wolf's ATK to the target enemy.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -105,8 +126,7 @@
         </div>
     </section>
     <section class="sec-2">
-        <div>
-            <button class="btn-demo">Demo Test</button>
+        <div class="div-demo">
         </div>
         <div class="box-part">
             <div class="box history-box">
@@ -141,7 +161,7 @@
                     </group>
                 </div>
                 <div class="character-roll">
-                    <h1>Stellaron Hunters</h1>
+                    <h1 class="extra_title">Stellaron Hunters</h1>
                     <div class="characters">
                         <img id="char-0" src="src/chars/char0.png" alt="Char 0" data-num="0" class="">
                         <img id="char-1" src="src/chars/char1.png" alt="Char 1" data-num="1" class="active">
@@ -155,6 +175,11 @@
                 </div>
             </div>
         </div>
+        <group class="stickers s2">
+            <img id="char-0" src="src/png/sticker-0.png" alt="Sticker" class="">
+            <img id="char-1" src="src/png/sticker-1.png" alt="Sticker" class="active">
+            <img id="char-2" src="src/png/sticker-2.png" alt="Sticker">
+        </group>
     </section>
     <script>
         document.querySelectorAll(".characters img").forEach((e) => {
@@ -181,8 +206,7 @@
 
             paragraph.querySelectorAll("a").forEach((e, i, parent) => {
                 e.onclick = () => {
-                    if(!e.classList.contains("active")) {
-                        //parent.querySelector(".active").classList.remove("active");
+                    if (!e.classList.contains("active")) {
                         let atual = paragraph.querySelector("a.active")
                         if (atual) { atual.classList.remove("active"); }
 
@@ -190,9 +214,12 @@
                         e.classList.add("active");
                     }
                 }
-             })
+            })
         })
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="src/js/main.js"></script>
+    <script src="src/js/anim.js"></script>
 </body>
 
 </html>

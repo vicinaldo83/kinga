@@ -3,7 +3,7 @@
     --btn-h-bg: #000;
     --btn-h-text: #fff;
     --btn-demo-bg: #ca3fd9;
-    --btn-demo-text: #fff; 
+    --btn-demo-text: #fff;
 
     --wolf-t1: #000;
     --wolf-t2: #ca3fd9;
@@ -14,6 +14,10 @@
     --text-dmg: #ff03bf;
     --text-qnt: #6ea0ff;
     --text-res: #ca3fd9;
+}
+
+html {
+    overflow-x: hidden;
 }
 
 body {
@@ -31,10 +35,14 @@ body {
     overflow-y: visible;
 }
 
-html {
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
+
+@media only screen and (min-width: 1200px) {
+    html {
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+    }
 }
+
 
 ::-webkit-scrollbar {
     width: 0.6rem;
@@ -60,7 +68,6 @@ html {
 }
 
 section {
-    display: flex;
     position: relative;
 
     scroll-snap-align: start;
@@ -83,11 +90,12 @@ res {
 }
 
 .sec-1 {
-    display: grid;
-    grid-template-columns: auto auto;
+    display: flex;
+    flex-flow: row nowrap;
 }
 
 .sec-2 {
+    display: flex;
     flex-flow: column nowrap;
 }
 
@@ -103,14 +111,20 @@ res {
     z-index: 10;
 }
 
-
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
 
 .side-headers {
     top: 0;
     left: 0;
     position: fixed;
 
-    margin: 0.3rem 0.4rem 0px 0.3rem;
+    margin: 0.5rem 0.5rem 0 0.5rem;
 
     display: none;
 }
@@ -118,7 +132,7 @@ res {
 .mid-headers {
     top: 0;
     left: 0;
-    
+
     display: flex;
     position: fixed;
 
@@ -148,7 +162,7 @@ res {
     /*
     color: var(--btn-h-bg);
     background-color: transparent;
-    */ 
+    */
     filter: invert(1);
 }
 
@@ -186,7 +200,7 @@ res {
 
 .title-box {
     position: relative;
-    
+
     top: 0;
     left: 0;
 
@@ -212,7 +226,7 @@ res {
 .t-2 {
     color: var(--wolf-t2);
     z-index: -1;
-    
+
     height: 24vh;
     padding: 0;
     padding-left: 2rem;
@@ -249,7 +263,7 @@ res {
 .skill-types {
     display: flex;
     flex-flow: row-reverse nowrap;
-    
+
     justify-items: center;
 
     margin: 0;
@@ -274,7 +288,7 @@ res {
     transition: 0s, scale 0.5s ease, opacity 0.3s ease;
     opacity: 0.6;
     filter: invert(1) grayscale(1);
-    
+
 
     scale: 0.8;
 }
@@ -283,21 +297,25 @@ res {
     border-color: #fff;
     opacity: 1;
     scale: 1;
-    
+
 }
 
 .skill-types a.active:hover {
     border-color: #fff;
-} 
+}
 
 .skill-types a:hover {
     transition: 0.2s;
     border-bottom: #aaa solid 4px;
 }
 
+.skill-types img {
+    width: 100%;
+}
+
 .skill-infos {
     margin: 0;
-    overflow-x:hidden;
+    overflow-x: hidden;
     overflow-y: scroll;
 
     width: fit-content;
@@ -305,11 +323,11 @@ res {
     max-width: 90%;
 
     padding: 0 5.8% 10% 5.8%;
-    
+
     display: flex;
     flex-flow: row-reverse;
-    align-items:center;
-    justify-content:center;
+    align-items: center;
+    justify-content: center;
     align-self: flex-start;
 
 }
@@ -342,7 +360,7 @@ res {
 
 .skills h1 {
     width: fit-content;
-    
+
     top: 0;
     margin: 1.5rem 0 1.5rem 0;
     padding: 0.6rem 1.3rem 0.6rem 1.3rem;
@@ -358,24 +376,18 @@ res {
 }
 
 .img-div {
-    width: 50vh;
-    height: fit-content;
-
+    width: 100%;
     z-index: 2;
 }
 
-/*
-    632
-    608
-*/
-
 .img-floating {
-    width: 66vw;
+    width: 100%;
     z-index: 100;
 
-    /* transform: translateX(-16vw) translateY(10vh) rotate(0deg); */
-}
+    scale: 1.2;
 
+    transition: scale 0.3s ease;
+}
 
 .history-box {
     display: grid;
@@ -466,6 +478,10 @@ res {
     animation-iteration-count: 1;
 }
 
+.stickers.s2 {
+    display: none;
+}
+
 .character-roll {
     display: flex;
     flex-flow: column nowrap;
@@ -478,7 +494,7 @@ res {
     align-self: center;
 }
 
-.character-roll h1 {
+.character-roll h1, .extra_title {
     width: fit-content;
 
     top: 0;
@@ -536,8 +552,13 @@ res {
 }
 
 @keyframes fade-in {
-    from { opacity: 0;}
-    to {opacity: 1;}
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .paragraph-wrapper {
@@ -557,7 +578,7 @@ res {
 
     margin: 0;
     padding: 0;
-    
+
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
@@ -581,10 +602,10 @@ res {
 
     left: 50%;
     bottom: -2.5rem;
-    transform: translateX(-50%); 
+    transform: translateX(-50%);
 }
 
-.paragraph-slider a{
+.paragraph-slider a {
     width: 1rem;
     height: 1rem;
 
@@ -604,11 +625,41 @@ res {
 }
 
 
-@media only screen and (min-width: 600px) and (max-width: 1200px){
-
-}
+@media only screen and (min-width: 600px) and (max-width: 1200px) {}
 
 @media only screen and (max-width: 600px) {
+    body {
+        background-image: url("/kinga/src/png/forms_nonbg_mobile.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    section {
+        height: 100svh;
+    }
+
+    .sec-1 {
+        flex-direction: column;
+    }
+
+    .img-div {
+        order: -1;
+    }
+
+    .title-box {
+        height: 0;
+        position: absolute;
+    }
+
+    .t-1 {
+        height: fit-content;
+        width: fit-content;
+    }
+    
+    .t-2 {
+        height: fit-content;
+        width: fit-content;
+    }
 
     .side-headers {
         display: unset;
@@ -626,7 +677,7 @@ res {
 
     .mid-headers {
         display: none;
-        
+
     }
 
     .skills {
@@ -639,21 +690,50 @@ res {
 
 
     .skill-box {
-        width: 88vw;
+        width: 84vw;
+        height: 40vh;
+
+        margin: 0 auto;
         border-radius: calc(4.7vw * 3);
+        padding: 0 1vh;
 
 
-        grid-template-columns: 19% 81%;
+        grid-template-columns: 15% 77%;
         grid-template-rows: auto;
+        transform: translateY(-6vh);
+    }
+
+    .div-demo {
+        width: 0;
+        height: 0;
+    }
+
+    .btn-demo {
+        width: fit-content;
+        
+        margin: 2rem auto;
+        padding: 1rem 3rem;
+
+        border-radius: calc(3.6vw * 3);
+        transform: translateY(-6vh);
+
+        z-index: 10;
+    }
+
+    .btn-demo:hover {
+        transform: translateY(-6vh);
+        filter: brightness(1.2);
+    
+        box-shadow: 0 0 0 2px var(--btn-demo-bg);
     }
 
     .skill-types {
         flex-direction: column-reverse;
 
         margin: auto 0;
-        
+
     }
-    
+
     .skill-types a {
         background-color: transparent;
         border-bottom: none;
@@ -661,32 +741,104 @@ res {
 
         margin: 0 0px 0px 0px;
     }
-    
+
     .skill-types a:hover {
         transition: 0.2s;
         border-right: #aaa solid 4px;
         border-bottom: none;
     }
 
-    .history-box {    
-        grid-template-columns: auto;
-        grid-template-rows: 30% 5% 20%;
-        justify-content: space-between;
-    
+    .history-box {
+        display: flex;
+        flex-flow: column nowrap;
+        align-content: space-between;
+        justify-content: center;
+
         height: 64vh;
-    
+
         margin: auto 2rem;
         border-radius: calc(4.7vw * 3);
     }
 
-    .character-roll h1 {
+    .history-box::after {
+        background-position-y: 0;
+        background-position-x: center;
+        
+        background-size: cover;
+        background-repeat: no-repeat;
+        opacity: 0.1;
+    }
+
+    .character-roll h1, .extra_title {
         width: fit-content;
+
+        margin: 1rem auto 2rem auto;
+        border-radius: calc(2.7vw * 3);
+    }
+
+    .paragraph-slider a {
+        width: 0.8rem;
+        height: 0.8rem;
+    }
+
+    .box-part {
+        margin-top: 2rem;
+        position: relative;
+    }
+
+    .extra-info {
+        flex: 0 0 60%;
+
+        grid-template-columns: auto;
+        grid-template-rows: auto 95%;
+    }
+
+    .extra-info p {
+        margin: 0 2rem 0 2rem;
+    }
+
+    .character-roll {
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
     
-        top: 0;
-        margin: 1.5rem 0 1.5rem 0;
-        padding: 0.6rem 1.3rem 0.6rem 1.3rem;
-    
-        border: 4px solid #000;
-        border-radius: 2.7vw;
+    .characters {
+        width: 100%;
+
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+
+        bottom: 0;
+    }
+
+    .characters img {
+        width: 30%;
+    }
+
+    .character-scroll {
+        display: none;
+    }
+
+    .stickers {
+        display: none;
+    }
+
+    .stickers.s2 {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: fit-content;
+
+        position: relative;
+    }
+
+    .stickers.s2 img {
+        transform: none;
+        height: max-content;
+        width: 50%;
+
+        position: absolute;
     }
 }
