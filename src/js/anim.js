@@ -22,11 +22,12 @@ const wInfo = {
 };
 
 const title_initial_x = (initial_vw <= 800) ? initial_vw : 0;
-const title_initial_y = (initial_vw <= 800) ? 180 : 0;
+const title_initial_y = (initial_vw <= 800) ? initial_vh / 5.2 : 0;
 const title_size = {
     1: document.querySelector(".t-1").getBoundingClientRect(),
     2: document.querySelector(".t-2").getBoundingClientRect(),
 };
+console.log(initial_vh / 5.2);
 const tInfo = {
     t1: {
         base_x: title_initial_x + ((initial_vw <= 800) ? 100 : -320),
@@ -36,9 +37,9 @@ const tInfo = {
     },
     t2: {
         base_x: title_initial_x + ((initial_vw <= 800) ? 100 : 0),
-        base_y: title_initial_y + ((initial_vw <= 800) ? -60 : 0),
+        base_y: title_initial_y + ((initial_vw <= 800) ? -initial_vh / 15.6 : 0),
         x: title_initial_x + ((initial_vw <= 800) ? -title_size[2].width - 20 : 320),
-        y: title_initial_y + ((initial_vw <= 800) ? -60 : 0) ,
+        y: title_initial_y + ((initial_vw <= 800) ? -initial_vh / 15.6 : 0),
     }
 };
 
@@ -118,10 +119,10 @@ function screen_handler() {
 
             if (wInfo.vw <= 800) {
                 tInfo.t1.x = wInfo.vw - title_size[1].width - 30;
-                tInfo.t1.y = 180;
+                tInfo.t1.y = initial_vh / 5.2;
 
-                tInfo.t2.x = wInfo.vw - title_size[2].width - 20
-                tInfo.t2.y = 120
+                tInfo.t2.x = wInfo.vw - title_size[2].width - 20;
+                tInfo.t2.y = initial_vh / 7.7;
 
                 gsap.to(".t-1", { ease: "power1.out", duration: 1, x: tInfo.t1.x, y: tInfo.t1.y})
                 gsap.to(".t-2", { ease: "power1.out", duration: 1, x: tInfo.t2.x, y: tInfo.t2.y})
