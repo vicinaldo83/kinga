@@ -643,6 +643,7 @@ res {
     }
 
     .img-div {
+        height: 33vh;
         order: -1;
     }
 
@@ -693,7 +694,7 @@ res {
         width: 84vw;
         height: 40vh;
 
-        margin: 0 auto;
+        margin: 2rem auto;
         border-radius: calc(4.7vw * 3);
         padding: 0 1vh;
 
@@ -712,16 +713,13 @@ res {
         width: fit-content;
         
         margin: 2rem auto;
-        padding: 1rem 3rem;
+        padding: 0.5rem 3rem;
 
         border-radius: calc(3.6vw * 3);
-        transform: translateY(-6vh);
-
         z-index: 10;
     }
 
     .btn-demo:hover {
-        transform: translateY(-6vh);
         filter: brightness(1.2);
     
         box-shadow: 0 0 0 2px var(--btn-demo-bg);
@@ -753,10 +751,10 @@ res {
         flex-flow: column nowrap;
         align-content: space-between;
         justify-content: center;
-
+        width: 84vw;
         height: 64vh;
 
-        margin: auto 2rem;
+        margin: 1rem auto;
         border-radius: calc(4.7vw * 3);
     }
 
@@ -837,7 +835,8 @@ res {
     .stickers.s2 img {
         transform: none;
         height: max-content;
-        width: 50%;
+        max-width: 50%;
+        aspect-ratio: 259 / 298;
 
         position: absolute;
     }
