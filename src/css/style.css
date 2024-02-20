@@ -18,6 +18,21 @@
 
 html {
     overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+@media only screen and (min-width: 1200px) {
+    body {
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    body {
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+    }
 }
 
 body {
@@ -29,20 +44,9 @@ body {
 
     height: 200vh;
     width: 100vw;
-    max-width: 100vw;
 
     overflow-x: hidden;
-    overflow-y: visible;
 }
-
-
-@media only screen and (min-width: 1200px) {
-    html {
-        scroll-snap-type: y mandatory;
-        scroll-behavior: smooth;
-    }
-}
-
 
 ::-webkit-scrollbar {
     width: 0.6rem;
@@ -321,6 +325,7 @@ res {
     width: fit-content;
     height: auto;
     max-width: 90%;
+    max-device-width: 90%;
 
     padding: 0 5.8% 10% 5.8%;
 
@@ -564,6 +569,7 @@ res {
 .paragraph-wrapper {
     position: relative;
     max-width: 100%;
+    max-device-width: 100%;
 
     margin: 1em 0;
     padding: 0;
@@ -635,7 +641,7 @@ res {
     }
 
     section {
-        height: 100svh;
+        height: 100dvh;
     }
 
     .sec-1 {
@@ -643,7 +649,7 @@ res {
     }
 
     .img-div {
-        height: 33vh;
+        height: 33dvh;
         order: -1;
     }
 
@@ -691,8 +697,8 @@ res {
 
 
     .skill-box {
-        width: 84vw;
-        height: 40vh;
+        width: 84dvw;
+        height: 40dvh;
 
         margin: 2rem auto;
         border-radius: calc(4.7vw * 3);
@@ -701,7 +707,6 @@ res {
 
         grid-template-columns: 15% 77%;
         grid-template-rows: auto;
-        transform: translateY(-6vh);
     }
 
     .div-demo {
@@ -751,8 +756,8 @@ res {
         flex-flow: column nowrap;
         align-content: space-between;
         justify-content: center;
-        width: 84vw;
-        height: 64vh;
+        width: 84dvw;
+        height: 64dvh;
 
         margin: 1rem auto;
         border-radius: calc(4.7vw * 3);

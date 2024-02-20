@@ -12,6 +12,8 @@
     <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vitae laboriosam amet, alias voluptatem dolorum quas fugiat in praesentium sed nobis ipsa quibusdam. Expedita ratione laboriosam dignissimos possimus? Blanditiis, voluptatibus?
     </p>
+
+    <img src="https://static.vecteezy.com/system/resources/previews/001/208/675/original/banana-png.png" alt="Banana">
     <!-- <svg version="1.1" id="Camada_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         x="0px" y="0px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
         <style type="text/css">
@@ -35,12 +37,23 @@
         width: 300px;
         height: 300px;
     }
+    img {
+        width: 30vw;
+    }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script>
-    let vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0),
-        vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+    let j_tocou = 0;
+    let som = new Audio('https://www.myinstants.com/media/sounds/jixaw-metal-pipe-falling-sound.mp3');
+    function mouse(e) {
+        gsap.to("img", {duration: 1, rotationY: (e.clientX) * 0.5})
 
-    gsap.fromTo("svg", {x:200, y:vh}, {y:100, duration:3,})
+        console.log(e.clientX * 0.5)
+        if(e.clientX * 0.5 > 700 && j_tocou == 0) {
+            j_tocou = 1;
+            som.play();
+        }
+    };
+    document.addEventListener("mousemove", mouse)
 </script>
 </html>

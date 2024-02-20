@@ -123,8 +123,7 @@ function extra_tile() {
             );
         }
         else {
-            let sec = document.querySelector(".extra-info");
-            // let sec = document.querySelector(".character-roll");
+            let sec = document.querySelector(".character-roll");
             sec.insertBefore(
                 createElm(),
                 sec.firstChild
