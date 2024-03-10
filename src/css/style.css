@@ -28,24 +28,25 @@ html {
     }
 }
 
-@media only screen and (max-width: 800px) {
-    body {
-        scroll-snap-type: y mandatory;
-        scroll-behavior: smooth;
-    }
-}
-
 body {
     margin: 0;
     padding: 0;
 
     background-color: var(--main-bg);
     background-image: url("/kinga/src/png/forms_nonbg.png");
+    background-repeat: no-repeat;
 
     height: 200vh;
     width: 100vw;
 
     overflow-x: hidden;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -9999;
 }
 
 ::-webkit-scrollbar {
@@ -75,6 +76,7 @@ section {
     position: relative;
 
     scroll-snap-align: start;
+    scroll-snap-stop: always;
     justify-content: flex-start;
 
     width: 100vw;
@@ -503,11 +505,12 @@ res {
     width: fit-content;
 
     top: 0;
-    margin: 1.5rem 0 1.5rem 0;
+    margin: 1.5rem auto 1.5rem auto;
     padding: 0.6rem 1.3rem 0.6rem 1.3rem;
 
     border: 4px solid #000;
     border-radius: 2.7vw;
+
 }
 
 .character-roll img {
@@ -630,7 +633,6 @@ res {
     opacity: 1;
 }
 
-
 @media only screen and (min-width: 600px) and (max-width: 1200px) {}
 
 @media only screen and (max-width: 600px) {
@@ -641,7 +643,7 @@ res {
     }
 
     section {
-        height: 100dvh;
+        height: 100vh;
     }
 
     .sec-1 {
@@ -649,7 +651,7 @@ res {
     }
 
     .img-div {
-        height: 33dvh;
+        height: 33vh;
         order: -1;
     }
 
@@ -697,8 +699,8 @@ res {
 
 
     .skill-box {
-        width: 84dvw;
-        height: 40dvh;
+        width: 84vw;
+        height: 40vh;
 
         margin: 2rem auto;
         border-radius: calc(4.7vw * 3);
@@ -756,8 +758,8 @@ res {
         flex-flow: column nowrap;
         align-content: space-between;
         justify-content: center;
-        width: 84dvw;
-        height: 64dvh;
+        width: 84vw;
+        height: 64vh;
 
         margin: 1rem auto;
         border-radius: calc(4.7vw * 3);
@@ -844,5 +846,68 @@ res {
         aspect-ratio: 259 / 298;
 
         position: absolute;
+    }
+}
+
+.loading-wrapper {
+    /* display: flex; */
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    position: fixed;
+    
+    width: 100vw;
+    height: 100%;
+
+    background-color: #ffffff;
+    z-index: 998;
+    
+}
+
+.loading {
+    position: relative;
+
+    animation: loading 5s steps(61) infinite; 
+    background: url("/src/png/loading-12fps.png");
+    background-repeat: no-repeat;
+
+    width: 124px;
+    height: 124px;
+
+    top: 90%;
+    transform: translateY(-100%);
+
+    margin: 2rem auto;
+}
+
+@media only screen and (max-width: 600px) {
+    
+    .loading {
+        height: 93px;
+        width: 93px;
+
+        background-size: cover;
+        animation: loading_mobile 5s steps(61) infinite;
+    }
+
+
+}
+
+@keyframes loading {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 0 -7564px;
+    }
+}
+
+@keyframes loading_mobile {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 0 -5673px;
     }
 }

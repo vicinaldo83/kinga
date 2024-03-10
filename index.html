@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="overflow: hidden;">
 
 <head>
     <meta charset="UTF-8">
@@ -18,9 +18,15 @@
     <link rel="stylesheet" href="src/css/style.css">
     <link rel="stylesheet" href="src/css/fonts.css">
 
+    <link rel="preload" href="src/chars/splashart-char0.png" as="fetch"/>
+    <link rel="preload" href="src/chars/splashart-char1.png" as="fetch"/>
+    <link rel="preload" href="src/chars/splashart-char2.png" as="fetch"/>
 </head>
 
 <body>
+    <div class="loading-wrapper">
+        <div class="loading"></div>
+    </div>
     <div class="headers">
         <div class="side-headers">
             <span class="material-symbols-outlined">
@@ -123,6 +129,7 @@
         </div>
         <div class="img-div">
             <img class="img-floating" src="src/png/kinga_nobg.png" alt="Silver Wolf">
+            <div></div>
         </div>
     </section>
     <section class="sec-2">
@@ -132,6 +139,7 @@
             <div class="box history-box">
                 <div class="extra-info">
                     <div id="char-0">
+                        <h1 class="extra_title">Stellaron Hunters</h1>
                         <p>
                             A member of the <dmg>Stellaron Hunters</dmg> and a swordsman who abandoned his body to
                             become a blade. He pledges loyalty to <qnt>Destiny's Slave</qnt> and possesses a terrifying
@@ -139,6 +147,7 @@
                         </p>
                     </div>
                     <div id="char-1" class="active">
+                        <h1 class="extra_title">Stellaron Hunters</h1>
                         <p>
                             A member of the <dmg>Stellaron Hunters</dmg> and a genius hacker. <qnt>Silver Wolf </qnt>has
                             mastered the skill known as <dmg>"aether editing"</dmg>, which can be used to tamper with
@@ -147,6 +156,7 @@
                         </p>
                     </div>
                     <div id="char-2">
+                        <h1 class="extra_title">Stellaron Hunters</h1>
                         <p>
                             A member of the <dmg>Stellaron Hunters</dmg> who is calm, collected, and beautiful. Her
                             record on the wanted list of the <qnt>Interastral Peace Corporation</qnt> only lists her
@@ -161,7 +171,6 @@
                     </group>
                 </div>
                 <div class="character-roll">
-                    <h1 class="extra_title">Stellaron Hunters</h1>
                     <div class="characters">
                         <img id="char-0" src="src/chars/char0.png" alt="Char 0" data-num="0" class="">
                         <img id="char-1" src="src/chars/char1.png" alt="Char 1" data-num="1" class="active">
@@ -182,6 +191,13 @@
         </group>
     </section>
     <script>
+        window.addEventListener("load", function(){
+            setTimeout(() => {
+                document.querySelector(".loading-wrapper").setAttribute("style", "display: none;");
+                document.querySelector("html").removeAttribute("style");
+            }, 20);
+        });
+
         document.querySelectorAll(".characters img").forEach((e) => {
             e.onclick = () => {
                 char_scroll(document.querySelector("a#" + e.id));
@@ -220,6 +236,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="src/js/main.js"></script>
     <script src="src/js/anim.js"></script>
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://unpkg.com/three@0.161.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.161.0/examples/jsm/"
+          }
+        }
+    </script>
+    <script type="module" src="src/js/three.mjs"></script>
 </body>
 
 </html>

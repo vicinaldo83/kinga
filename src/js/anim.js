@@ -27,7 +27,7 @@ const title_size = {
     1: document.querySelector(".t-1").getBoundingClientRect(),
     2: document.querySelector(".t-2").getBoundingClientRect(),
 };
-console.log(initial_vh / 5.2);
+
 const tInfo = {
     t1: {
         base_x: title_initial_x + ((initial_vw <= 800) ? 100 : -320),
@@ -153,4 +153,5 @@ function main_timeline() {
     kinga_anim();
 };
 
-main_timeline();
+
+window.addEventListener("load",  main_timeline);

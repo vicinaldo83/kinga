@@ -17,23 +17,23 @@ function skill_scroll(element) {
         }
     }
 
-    
+
 }
 
 function skill_scroll_mobile(event) {
     let box = event.srcElement;
     let active = undefined;
-    if(box.scrollLeft == 0) {
+    if (box.scrollLeft == 0) {
         active = 0
     }
     else {
-        active = (box.scrollWidth / box.scrollLeft <= 2)? 2 : 1;
+        active = (box.scrollWidth / box.scrollLeft <= 2) ? 2 : 1;
     }
 
     let child = box.parentElement.querySelector(".paragraph-slider").children;
-    for(let i = 0; i < child.length; i++) {
-        if(i == active) child[i].classList.add("active");
-        else  child[i].classList.remove("active"); 
+    for (let i = 0; i < child.length; i++) {
+        if (i == active) child[i].classList.add("active");
+        else child[i].classList.remove("active");
     }
 }
 document.querySelector(".paragraph-box").addEventListener("scrollend", skill_scroll_mobile);
@@ -47,7 +47,7 @@ function char_scroll(element) {
         document.querySelector(".character-roll img.active").classList.remove("active");
         document.querySelector(".extra-info div.active").classList.remove("active");
         document.querySelector(".extra-info img.active").classList.remove("active");
-        
+
         document.querySelectorAll(".stickers img.active").forEach((e) => {
             e.classList.remove("active");
         });
@@ -69,7 +69,7 @@ function char_scroll(element) {
     }
 }
 
-function demo_button () {
+function demo_button() {
     function createButton() {
         let btn = document.createElement("button");
         btn.classList.add("btn-demo");
@@ -81,10 +81,10 @@ function demo_button () {
     function set_btn() {
         let initial_vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0),
             old_btn = document.querySelector(".btn-demo");
-        
-        if(old_btn) old_btn.parentElement.removeChild(old_btn);
-        if(initial_vw <= 800) {
-            
+
+        if (old_btn) old_btn.parentElement.removeChild(old_btn);
+        if (initial_vw <= 800) {
+
             let sec = document.querySelector(".sec-1");
             sec.insertBefore(
                 createButton(),
@@ -113,9 +113,9 @@ function extra_tile() {
     function set_elm() {
         let initial_vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0),
             old_btn = document.querySelector(".extra_title");
-        
-        if(old_btn) old_btn.parentElement.removeChild(old_btn);
-        if(initial_vw <= 800) {
+
+        if (old_btn) old_btn.parentElement.removeChild(old_btn);
+        if (initial_vw <= 800) {
             let sec = document.querySelector(".extra-info");
             sec.insertBefore(
                 createElm(),
@@ -134,4 +134,4 @@ function extra_tile() {
     set_elm()
     addEventListener("resize", set_elm);
 }
-extra_tile();
+// extra_tile();
