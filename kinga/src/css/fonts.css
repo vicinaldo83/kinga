@@ -1,0 +1,71 @@
+@font-face {
+    font-family: 'Wano Quin';
+    src: url('/kinga/src/fonts/Wano_quin/wano-quin-wano-quin-regular-400.ttf') format('truetype'),
+        url('/kinga/src/fonts/Wano_quin/wano-quin-wano-quin-regular-300.otf') format('opentype'),
+        url('/kinga/src/fonts/Wano_quin/wano-quin-wano-quin-regular-300-webfont.woff') format('woff'),
+        url('/kinga/src/fonts/Wano_quin/wano-quin-wano-quin-regular-300-webfont.woff2') format('woff2');
+}
+
+.btn-header {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5vh;
+}
+
+.btn-demo {
+    font-family: 'Roboto', sans-serif;
+    font-size: 6.4vh;
+}
+
+.box {
+    font-family: 'Roboto', sans-serif;
+}
+
+.title-box {
+    font-family: 'Wano Quin';
+}
+
+.t-1 { 
+    font-size: 22vw;
+    font-weight: 400;
+}
+
+.t-2 {
+    font-size: 22vw;
+    font-weight: 300;
+}
+
+.skill-infos {
+    font-size: 2.8vh;
+    text-align: justify;
+}
+
+.skills h1 {
+    font-size: 4.2vh;
+
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+}
+
+.extra-info {
+    font-size: 2.8vh;
+    text-align: justify;
+}
+
+.character-roll h1 {
+    font-size: 4.2vh;
+
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .skills h1 {
+        font-size: calc(4.2vh * 0.8);
+    }
+
+    .skill-infos {
+        font-size: calc(2.8vh * 0.8);
+    }
+}
