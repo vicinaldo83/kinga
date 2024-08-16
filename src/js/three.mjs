@@ -336,6 +336,7 @@ function main() {
         panel.composer.render();
     }
 
+    return;
     setup();
     animate();
 }

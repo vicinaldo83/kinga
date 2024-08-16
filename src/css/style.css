@@ -33,7 +33,7 @@ body {
     padding: 0;
 
     background-color: var(--main-bg);
-    background-image: url("/kinga/src/png/forms_nonbg.png");
+    /* background-image: url("/kinga/src/png/forms_nonbg.png"); */
     background-repeat: no-repeat;
 
     height: 200vh;
@@ -384,7 +384,29 @@ res {
 
 .img-div {
     width: 100%;
-    z-index: 2;
+    z-index: -1;
+}
+
+.img-div::after {
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    z-index: -1;
+
+    background-image: url("/kinga/src/png/forms.png");
+    isolation: isolate;
+
+    width: 100%;
+    height: 100%;
+
+    transform: translateY(12rem) translateX(20rem);
+
+    background-position-y: center;
+    background-position-x: center;
+    background-size: 50%;
+    background-repeat: no-repeat;
 }
 
 .img-floating {
@@ -654,6 +676,8 @@ res {
         height: 33vh;
         order: -1;
     }
+
+    
 
     .title-box {
         height: 0;
